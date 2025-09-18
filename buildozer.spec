@@ -1,25 +1,20 @@
 [app]
 
 # (str) Title of your application
-title = Crypto Trading Bot # <-- YEH BADLO
+title = Crypto Trading Bot
 
 # (str) Package name
-package.name = cryptobot # <-- YEH BADLO
+package.name = cryptobot
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.narendra.bot # <-- YEH BADLO
+package.domain = org.narendra.bot
 
 # (str) Source code where the main.py live
-# हमारा main file gui.py है, तो हम उसे यहाँ बताएंगे।
-main.py = gui.py
+# अब हमारा main file main.py है।
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
 source.include_exts = py,png,jpg,kv,atlas,spec
-
-# (list) Source files to exclude (let empty to not exclude anything)
-# matplotlib और pandas को build से हटा रहे हैं ताकि build फेल न हो।
-source.exclude_exts = venv,json
 
 # (list) List of directory to exclude (let empty to not exclude anything)
 source.exclude_dirs = __pycache__, .buildozer, bin, venv, tests
@@ -28,8 +23,8 @@ source.exclude_dirs = __pycache__, .buildozer, bin, venv, tests
 version = 1.0
 
 # (list) Application requirements
-# ज़रूरी libraries यहाँ डालो। matplotlib और pandas को हटा दिया है।
-requirements = python3,kivy,kivymd,python-binance,requests # <-- SABSE ZARURI
+# Kivy App के लिए सभी ज़रूरी libraries.
+requirements = python3,kivy,kivymd,python-binance,requests
 
 # (list) Supported orientations
 orientation = portrait
@@ -42,14 +37,13 @@ orientation = portrait
 fullscreen = 0
 
 # (list) Permissions
-# Internet की permission यहाँ दी है।
-android.permissions = INTERNET # <-- BAHUT ZARURI
+android.permissions = INTERNET
 
 # (int) Target Android API, should be as high as possible.
 android.api = 31
 
 # (int) Minimum API your APK / AAB will support.
-android.minapi = 21
+android.minapi = 24
 
 # (str) Android NDK version to use
 android.ndk = 25b
@@ -59,6 +53,13 @@ android.accept_sdk_license = True
 
 # (list) The Android archs to build for
 android.archs = arm64-v8a, armeabi-v7a
+
+#
+# Python for android (p4a) specific
+#
+# (str) python-for-android branch to use, defaults to master
+# हम इसे develop पर set कर रहे हैं ताकि latest fixes मिलें।
+p4a.branch = develop
 
 [buildozer]
 
